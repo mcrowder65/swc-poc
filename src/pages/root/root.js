@@ -1,18 +1,32 @@
 import React from "react"
-import { useQuery } from "react-query"
-import { getMessage } from "src/pages/root/root.service"
+import styled from "@emotion/styled"
+const Button = styled.button``
+const Div = styled.div`
+  background: purple;
+  ${Button} {
+    background: blue;
+  }
+`
+
 const Root = () => {
-  const { isLoading, data } = useQuery("message", getMessage)
-
-  if (isLoading) {
-    return "loading..."
+  let Buttons = []
+  for (let i = 0; i < 10000; i++) {
+    Buttons.push(
+      <Div key={i}>
+        <Button>I am button!</Button>
+      </Div>,
+    )
   }
-
-  if (data) {
-    return <div>{data.message}</div>
-  }
-
-  return null
+  return (
+    <>
+      {Buttons}
+      <Button>Goodbye</Button>
+      <Div>
+        <p>hello</p>
+        <Button>Hi</Button>
+      </Div>
+    </>
+  )
 }
 
 export default Root

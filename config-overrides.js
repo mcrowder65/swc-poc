@@ -26,7 +26,24 @@ if (process.env.NODE_ENV === "test") {
     jest: (config) => {
       config.setupFilesAfterEnv = ["<rootDir>/test/setup-tests.js"]
       config.modulePaths = ["."]
+      config.transform["^.+\\.(js|jsx|mjs|cjs|ts|tsx)$"] = [
+        "@swc/jest",
+        {
+          sourceMaps: true,
+          jsc: {
+            parser: {
+              syntax: "ecmascript",
+              jsx: true,
+            },
 
+            transform: {
+              react: {
+                runtime: "automatic",
+              },
+            },
+          },
+        },
+      ]
       return config
     },
   }

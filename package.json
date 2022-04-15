@@ -35,6 +35,8 @@
     "@storybook/node-logger": "6.4.9",
     "@storybook/preset-create-react-app": "4.0.0",
     "@storybook/react": "6.5.0-alpha.5",
+    "@swc/core": "^1.2.165",
+    "@swc/jest": "^0.2.20",
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "12.1.2",
     "@testing-library/user-event": "^13.5.0",

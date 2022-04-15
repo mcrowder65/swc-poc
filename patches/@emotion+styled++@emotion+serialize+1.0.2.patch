@@ -1,0 +1,14 @@
+diff --git a/node_modules/@emotion/styled/node_modules/@emotion/serialize/dist/emotion-serialize.cjs.dev.js b/node_modules/@emotion/styled/node_modules/@emotion/serialize/dist/emotion-serialize.cjs.dev.js
+index ec6619f..e65d923 100644
+--- a/node_modules/@emotion/styled/node_modules/@emotion/serialize/dist/emotion-serialize.cjs.dev.js
++++ b/node_modules/@emotion/styled/node_modules/@emotion/serialize/dist/emotion-serialize.cjs.dev.js
+@@ -89,7 +89,8 @@ function handleInterpolation(mergedProps, registered, interpolation) {
+ 
+   if (interpolation.__emotion_styles !== undefined) {
+     if (process.env.NODE_ENV !== 'production' && interpolation.toString() === 'NO_COMPONENT_SELECTOR') {
+-      throw new Error('Component selectors can only be used in conjunction with @emotion/babel-plugin.');
++      return null
++      // throw new Error('Component selectors can only be used in conjunction with @emotion/babel-plugin.');
+     }
+ 
+     return interpolation;
