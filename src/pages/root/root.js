@@ -10,7 +10,7 @@ const Div = styled.div`
 
 const Root = () => {
   let Buttons = []
-  for (let i = 0; i < 10000; i++) {
+  for (let i = 0; i < 1; i++) {
     Buttons.push(
       <Div key={i}>
         <Button>I am button!</Button>
